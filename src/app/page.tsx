@@ -1,3 +1,4 @@
+import Biblioteca from "@/components/Biblioteca";
 import CTACard from "@/components/CTACard";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
@@ -10,6 +11,7 @@ export default function Page() {
     <>
       <Header />
       <Hero />
+      <Biblioteca />
       <CTACard />
       <Footer />
     </>
