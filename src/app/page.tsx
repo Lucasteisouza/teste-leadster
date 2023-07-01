@@ -1,3 +1,7 @@
+import { Header } from "@/components/Header";
+
 export default function Page() {
-  return <h1>Testing</h1>
+  return (
+    <Header/>
+  )
 }
