@@ -1,6 +1,27 @@
-import React from 'react'
+'use client';
+import React, { useEffect } from 'react';
+import Card from './Card';
+
+export interface iPost  {
+  userId: number;
+  id: number;
+  title: string;
+  body: string;
+};
+
+export async function fecthVideoData(): Promise<iPost[]> {
+  const res = await fetch('https://jsonplaceholder.typicode.com/posts') //usando unm placeholder devido a falta de um endpoint real
+  const posts: iPost[] = await res.json();
+  return posts ;
+};
 
 export default function Biblioteca() {
+  const [posts, setPosts] = React.useState<iPost[]>([]);
+  useEffect(() => {
+    fecthVideoData().then((posts) => {
+      setPosts(posts);
+    });
+  }, []);
   return (
     <div>
       <label htmlFor="Agências">
@@ -23,6 +44,7 @@ export default function Biblioteca() {
         <input type='checkbox' name='Mídia Paga' id='Mídia Paga' />
         Mídia Paga
       </label>
+      {posts.map((post) => <Card key={ post.id } post={ post }/>)}
     </div>
   )
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import detail from '../assets/asset-header.png'
+import detail from '../../assets/asset-header.png'
 
 export default function Hero() {
   return (

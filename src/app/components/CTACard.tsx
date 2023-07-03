@@ -1,10 +1,10 @@
 import React from 'react'
 import Image from 'next/image'
-import graph from '../assets/comparativo_img_CTA.png'
+import graph from '../../assets/comparativo_img_CTA.png'
 import Link from 'next/link'
-import seloRD from '../assets/selo_RD.png'
-import noCard from '../assets/no-card-dark.webp'
-import rating from '../assets/rating.webp'
+import seloRD from '../../assets/selo_RD.png'
+import noCard from '../../assets/no-card-dark.webp'
+import rating from '../../assets/rating.webp'
 
 export default function CTACard() {
   return (
