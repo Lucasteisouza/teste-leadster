@@ -101,7 +101,7 @@ export default function Biblioteca() {
   }; //filtro realizado usando a presença de palavras chaves no título do post - não é case ideal, mas na falta de um endpoint real, serve como exemplo
 
   return (
-    <>
+    <section className='biblioteca'>
       <form>
         <label htmlFor="Agências">
           <input type='checkbox' name='Agências' id='Agências' onChange={handleChange} />
@@ -134,11 +134,13 @@ export default function Biblioteca() {
         </label>
         </div>
         </form>
-        {filteredPosts.length > 0 
-          ? filteredPosts.map((post) => <Card key={ post.id } post={ post }/>)
-          : posts.map((post) => <Card key={ post.id } post={ post }/>)
-        }
-      </>
+        <div>
+          {filteredPosts.length > 0 
+            ? filteredPosts.map((post) => <Card key={ post.id } post={ post }/>)
+            : posts.map((post) => <Card key={ post.id } post={ post }/>)
+          }
+        </div>
+      </section>
   )
 }
 

@@ -8,7 +8,7 @@ import rating from '../../assets/rating.webp'
 
 export default function CTACard() {
   return (
-    <section>
+    <section className='CTA'>
       <Image src={ graph } alt= 'Gráfico de comparação'></Image>
       <div>
         <h1>Pronto para triplicar sua <br/>
