@@ -17,24 +17,24 @@ export async function fecthVideoData(): Promise<iPost[]> {
 };
 
 interface iInputState {
-  Agências: boolean;
-  Chatbot: boolean;
-  MarketingDigital: boolean;
-  GeraçãodeLeads: boolean;
-  MídiaPaga: boolean;
-  Orderby: string;
+  agencias: boolean;
+  chatbot: boolean;
+  marketingDigital: boolean;
+  geracaoDeLeads: boolean;
+  midiaPaga: boolean;
+  orderBy: string;
 }
 
 export default function Biblioteca() {
   const [posts, setPosts] = React.useState<iPost[]>([]);
   const [filteredPosts, setFilteredPosts] = React.useState<iPost[]>([]);
   const [inputState, setInputState] = React.useState<iInputState>({
-    Agências: false,
-    Chatbot: false,
-    MarketingDigital: false,
-    GeraçãodeLeads: false,
-    MídiaPaga: false,
-    Orderby: 'Data de publicação',
+    agencias: false,
+    chatbot: false,
+    marketingDigital: false,
+    geracaoDeLeads: false,
+    midiaPaga: false,
+    orderBy: 'Data de publicação',
   });
 
   useEffect(() => {
@@ -81,19 +81,19 @@ export default function Biblioteca() {
 
   const filterPosts = (): void => {
     const filteredPosts = posts.filter((post) => {
-      if (inputState.Agências && post.title.includes('Agências')) {
+      if (inputState.agencias && post.title.includes('Agências')) {
         return true;
       }
-      if (inputState.Chatbot && post.title.includes('Chatbot')) {
+      if (inputState.chatbot && post.title.includes('Chatbot')) {
         return true;
       }
-      if (inputState.MarketingDigital && post.title.includes('Marketing Digital')) {
+      if (inputState.marketingDigital && post.title.includes('Marketing Digital')) {
         return true;
       }
-      if (inputState.GeraçãodeLeads && post.title.includes('Geração de Leads')) {
+      if (inputState.geracaoDeLeads && post.title.includes('Geração de Leads')) {
         return true;
       }
-      if (inputState.MídiaPaga && post.title.includes('Mídia Paga')) {
+      if (inputState.midiaPaga && post.title.includes('Mídia Paga')) {
         return true;
       }
       return false;
@@ -104,30 +104,30 @@ export default function Biblioteca() {
   return (
     <section className={styles.biblioteca}>
       <form className={styles.filterContainer}>
-        <label htmlFor="Agências">
-          <input type='checkbox' name='Agências' id='Agências' onChange={handleChange} />
-          Agências
-        </label>
-        <label htmlFor="Chatbot">
-          <input type='checkbox' name='Chatbot' id='Chatbot' onChange={handleChange}/>
-          Chatbot
-        </label>
-        <label htmlFor="Marketing Digital">
-          <input type='checkbox' name='Marketing Digital' id='Marketing Digital' onChange={handleChange}/>
-          Marketing Digital
-        </label>
-        <label htmlFor="Geração de Leads">
-          <input type='checkbox' name='Geração de Leads' id='Geração de Leads' onChange={handleChange}/>
-          Geração de Leads
-        </label>
-        <label htmlFor="Mídia Paga">
-          <input type='checkbox' name='Mídia Paga' id='Mídia Paga' onChange={handleChange}/>
-          Mídia Paga
-        </label>
-        <div>
-          <label htmlFor="Order by">
+        <div className={styles.filterElement}>
+          <input type='checkbox' name='agencias' id='agencias' onChange={handleChange} />
+          <label htmlFor="agencias">Agências</label>
+        </div>
+        <div className={styles.filterElement}>
+          <input type='checkbox' name='chatbot' id='chatbot' onChange={handleChange}/>
+          <label htmlFor="chatbot">Chatbot</label>
+        </div>
+        <div className={styles.filterElement}>
+          <input type='checkbox' name='marketingDigital' id='marketingDigital' onChange={handleChange}/>
+          <label htmlFor="marketingDigital">Marketing Digital</label>
+        </div>
+        <div className={styles.filterElement}>
+          <input type='checkbox' name='geracaoDeLeads' id='geracaoDeLeads' onChange={handleChange}/>
+          <label htmlFor="geracaoDeLeads">Geração de Leads</label>
+        </div>
+        <div className={styles.filterElement}>
+          <input type='checkbox' name='midiaPaga' id='midiaPaga' onChange={handleChange}/>
+          <label htmlFor="midiaPaga">Mídia Paga</label>
+        </div>
+        <div className={styles.orderBy}>
+          <label htmlFor="orderBy">
             Ordenar por:
-            <select name="Order by" id="Order by" onChange={handleChangeSelect}>
+            <select name="orderBy" id="orderBy" onChange={handleChangeSelect}>
               <option value="Data de publicação">Data de publicação</option>
               <option value="Nota">Nota</option>
               <option value="Alfabética">Alfabética</option>
