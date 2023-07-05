@@ -1,10 +1,11 @@
 import Image from 'next/image';
-import React from 'react'
+import React from 'react';
 import logo from 'src/assets/logo.png';
+import styles from '../styles/Footer.module.css';
 
 export default function Footer() {
   return (
-    <footer>
+    <footer className={styles.footer}>
       <div>
         < Image src={ logo } alt= 'Logo'/>
         <p>Transformando visitantes em clientes</p>
