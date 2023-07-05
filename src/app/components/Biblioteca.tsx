@@ -1,6 +1,7 @@
 'use client';
 import React, { useEffect } from 'react';
 import Card from './Card';
+import styles from '../styles/Biblioteca.module.css'
 
 export interface iPost  {
   userId: number;
@@ -101,8 +102,8 @@ export default function Biblioteca() {
   }; //filtro realizado usando a presença de palavras chaves no título do post - não é case ideal, mas na falta de um endpoint real, serve como exemplo
 
   return (
-    <section className='biblioteca'>
-      <form>
+    <section className={styles.biblioteca}>
+      <form className={styles.filterContainer}>
         <label htmlFor="Agências">
           <input type='checkbox' name='Agências' id='Agências' onChange={handleChange} />
           Agências
@@ -124,17 +125,17 @@ export default function Biblioteca() {
           Mídia Paga
         </label>
         <div>
-        <label htmlFor="Order by">
-          Ordenar por:
-          <select name="Order by" id="Order by" onChange={handleChangeSelect}>
-            <option value="Data de publicação">Data de publicação</option>
-            <option value="Nota">Nota</option>
-            <option value="Alfabética">Alfabética</option>
-          </select>
-        </label>
+          <label htmlFor="Order by">
+            Ordenar por:
+            <select name="Order by" id="Order by" onChange={handleChangeSelect}>
+              <option value="Data de publicação">Data de publicação</option>
+              <option value="Nota">Nota</option>
+              <option value="Alfabética">Alfabética</option>
+            </select>
+          </label>
         </div>
         </form>
-        <div>
+        <div className={styles.cardContainer}>
           {filteredPosts.length > 0 
             ? filteredPosts.map((post) => <Card key={ post.id } post={ post }/>)
             : posts.map((post) => <Card key={ post.id } post={ post }/>)

@@ -4,9 +4,7 @@ import { iPost } from './Biblioteca';
 import Image from 'next/image';
 import thumb from '../../assets/thumbnail.png';
 import Modal from 'react-modal';
-import Link from 'next/link';
-
-Modal.setAppElement('.biblioteca');
+import styles from '../styles/Card.module.css';
 
 interface iProspsPost {
   post: iPost;
@@ -24,7 +22,7 @@ export default function Card(props: iProspsPost) {
   };
 
   return (
-    <div className ='card'>
+    <div className ={styles.card}>
       <Modal
         isOpen = { isModalOpen }
         parentSelector={ () => document.querySelector('.card')! }
