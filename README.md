@@ -1,34 +1,36 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Repositório para teste **Leadster**
+## Desenvolvedor Front-end
 
-## Getting Started
+Esse repositório foi criado como requisito para participar do processo seletivo da empresa Leadster em Julho de 2023.
 
-First, run the development server:
+Foi desenvolvido um projeto utilizando Next.js e desenvolvido utilizando TypeScript.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+### Organização
+Por se tratar de uma única página, mantive a estrutura padrão do Next, não havendo a necessidade de criação de rotas/subdiretórios de roteamento.
+A estrutura da página foi dividade em 6 componentes: Header, Hero, Biblioteca, Card, CTACard e Footer. Sendo todos eles inseridos na pasta components para possivel reutilização eu outra página no futuro.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+As imagens, icones e etc foram organizadas na pasta *assets*. E os arquivos de estilização (CSS) na pasta *styles*.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Explicando decisões
+#### Endpoint
+Devido a ausência de um endpoint real para o desenvolvimento da página, utilizei um placeholder disponível em https://jsonplaceholder.typicode.com/, foi utilizado o endpoint /posts por ser o que mais se assemelha ao objetivo da página real.
+#### Filtros e ordenador
+Como desenvolvi a aplicação usando um endpoint mock, a aplicação de filtros na biblioteca de vídeos fica um pouco comprometida, no entando, deixei indicado e comentado no código a ideia da lógica que seria aplicada. Esse trecho encontra-se no componente Biblioteca.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Rodando o projeto
+#### Para rodar o projeto localmente: 
+1. crie um clone desse repositório `git clone git@github.com:Lucasteisouza/teste-leadster.git`
+2. acesse a pasta do projeto `cd teste-leadster` 
+3. instale as dependencia `npm install`
+4. inicio o servidor local `npm start`
+5. acesse pelo navegador de sua escolha pelo endereço http://localhost:3000
 
-## Learn More
+#### Visualizar página diretamente no navegador
 
-To learn more about Next.js, take a look at the following resources:
+Esse projeto também foi deployado pelo Vercel, podendo ser acessado diretamente pelo link: https://teste-leadster-r4suyoo25-lucasteisouza.vercel.app/
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Me coloco a disposição para responder quaisquer dúvidas que venham a surgir. Posso ser contatado por:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Email: lucasteisouza@gmail.com
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+WhatsApp: (31) 97544-1211
